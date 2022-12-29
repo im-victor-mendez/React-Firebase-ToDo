@@ -1,0 +1,12 @@
+#header {
+    color: var(--very-light-gray);
+
+    #header-top {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            letter-spacing: 1rem;
+        }
+    }
+}

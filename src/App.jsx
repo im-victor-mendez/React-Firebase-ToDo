@@ -1,24 +1,16 @@
-import './App.css'
-/* To add into a changer theme button/function
-import BD_DESKTOP_DARK from "./assets/images/bg-desktop-dark.jpg";
-import BD_DESKTOP_LIGHT from "./assets/images/bg-desktop-light.jpg";
-import BD_MOBILE_DARK from "./assets/images/bg-mobile-dark.jpg";
-import BD_MOBILE_LIGHT from "./assets/images/bg-mobile-light.jpg";
-
-const currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-const currentWidth = window.matchMedia('(min-width: 1024px)').matches
-*/
+import { useState } from 'react'
+import './App.scss'
+import Header from './components/Header'
 
 function App() {
-  /* To add into a changer theme button/function
-    const [darkTheme, setDarkTheme] = useState(currentTheme)
+  const currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+  const currentWidth = window.matchMedia('(min-width: 720px)').matches
 
-    backgroundColor: `var(${darkTheme ? '--very-dark-blue' : '--very-light-gray'})`,
-    backgroundImage: `url(${darkTheme ? (currentWidth ? BD_DESKTOP_DARK : BD_MOBILE_DARK) : (currentWidth ? BD_DESKTOP_LIGHT : BD_MOBILE_LIGHT)})`
-  */
+  const [darkTheme, setDarkTheme] = useState(currentTheme)
   
   return (
-    <div className="App">
+    <div className="App" id='App'>
+      <Header theme={darkTheme} setDarkTheme={setDarkTheme} currentWidth={currentWidth} />
     </div>
   )
 }
