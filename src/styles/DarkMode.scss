@@ -2,4 +2,16 @@
     .App {
         background-color: var(--very-dark-blue);
     }
+
+    @media (max-width: 720px) {
+        .App {
+            background-image: url('../assets/images/bg-mobile-dark.jpg');
+        }
+    }
+    
+    @media (min-width: 720px) {
+        .App {
+            background-image: url('../assets/images/bg-desktop-dark.jpg');
+        }
+    }
 }
