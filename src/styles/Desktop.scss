@@ -1,0 +1,8 @@
+/* To fix width */
+@media (min-width: 10px) {
+    .App {
+        background-image: url('../assets/images/bg-desktop-dark.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

@@ -6,6 +6,8 @@ import './styles/colors.scss'
 import './styles/fonts.scss'
 import './styles/Mobile.scss'
 import './styles/Desktop.scss'
+import './styles/DarkMode.scss'
+import './styles/LightMode.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
