@@ -10,4 +10,10 @@
 
   background-repeat: no-repeat;
   background-size: contain;
+
+  * {
+    margin: 0rem;
+  }
+
+  font-family: var(--font-family);
 }
