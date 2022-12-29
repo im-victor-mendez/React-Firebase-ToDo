@@ -1,11 +1,12 @@
 // Import the functions you need from the SDKs you need
+import { getAuth } from "@firebase/auth";
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.VITE_API_KEY,
+  apiKey: import.meta.env.VITE_API_KEY,
   authDomain: "todo-a9408.firebaseapp.com",
   projectId: "todo-a9408",
   storageBucket: "todo-a9408.appspot.com",
@@ -15,3 +16,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app)
