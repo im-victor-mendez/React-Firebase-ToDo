@@ -1,0 +1,44 @@
+#todo_maker {
+    background-color: var(--very-dark-desaturated-blue);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    padding: 0.5rem;
+
+    #todo_maker-button {
+        background-color: transparent;
+        border: 1px solid var(--very-dark-grayish-blue);
+        border-radius: 50%;
+
+        padding: 0.7rem;
+
+        width: 20px;
+        height: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-image: var(--check-background);
+
+            img {
+                display: block;
+            }
+        }
+    }
+
+    img {
+        display: none;
+        transform: rotate(45deg);
+    }
+
+    #todo_maker-input {
+        background-color: transparent;
+        border: 0rem;
+        padding: 0rem;
+    }
+}
