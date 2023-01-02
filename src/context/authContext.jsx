@@ -10,6 +10,7 @@ export function useAuthContext() {
 }
 
 export function AuthProvider({ children }) {
+    /* To do a loading state */
     const [user, setUser] = useState(null)
 
     useEffect(() => {
