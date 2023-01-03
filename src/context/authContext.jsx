@@ -15,7 +15,6 @@ export function AuthProvider({ children }) {
 
     function unsubscribeObserver(currentUser) {
         setUser(currentUser)
-        localStorage.setItem('user', currentUser)
         setLoading(false)
     }
 
@@ -28,7 +27,10 @@ export function AuthProvider({ children }) {
 
     const register = (email, password) => createUserWithEmailAndPassword(auth, email, password)
     const login = (email, password) => signInWithEmailAndPassword(auth, email, password)
-    const logout = () => signOut(auth)
+    function logout() {
+        signOut(auth)
+        setLoading(true)
+    }
 
     return <authContext.Provider value={{ loading, user, register, login, logout }}>{children}</authContext.Provider>
 }
