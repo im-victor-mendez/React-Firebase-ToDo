@@ -45,6 +45,11 @@ function Login() {
 
             <button type="submit">Login</button>
         </form>
+
+        <div className='user-existence'>
+            <p>Not register? Do it now! 😄</p>
+            <button onClick={() => navigate('/register')}>Register</button>
+        </div>
     </section>
   )
 }
