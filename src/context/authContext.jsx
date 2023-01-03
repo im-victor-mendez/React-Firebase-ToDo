@@ -10,11 +10,16 @@ export function useAuthContext() {
 }
 
 export function AuthProvider({ children }) {
-    /* To do a loading state */
+    const [loading, setLoading] = useState(true)
     const [user, setUser] = useState(null)
 
+    function unsubscribeObserver(currentUser) {
+        setUser(currentUser)
+        localStorage.setItem('user', currentUser)
+        setLoading(false)
+    }
+
     useEffect(() => {
-        const unsubscribeObserver = currentUser => setUser(currentUser)
         const unsubscribe = onAuthStateChanged(auth, unsubscribeObserver)
     
         return () => unsubscribe()
@@ -24,5 +29,5 @@ export function AuthProvider({ children }) {
     const register = (email, password) => createUserWithEmailAndPassword(auth, email, password)
     const login = (email, password) => signInWithEmailAndPassword(auth, email, password)
 
-    return <authContext.Provider value={{ user, register, login }}>{children}</authContext.Provider>
+    return <authContext.Provider value={{ loading, user, register, login }}>{children}</authContext.Provider>
 }
