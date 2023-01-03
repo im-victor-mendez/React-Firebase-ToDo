@@ -24,7 +24,7 @@ function ToDo_Viewer() {
 
   return (
     <section id='todo_viewer'>
-        { todos && todos.map(todo => <ToDo content={todo.todo} key={uid()} />) }
+        { todos && todos.map(todo => <ToDo content={todo.todo} key={uid()} uid={todo.uidd} />) }
     </section>
   )
 }
