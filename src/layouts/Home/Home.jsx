@@ -1,3 +1,4 @@
+import './Home.scss'
 import React from 'react'
 import ToDo_Maker from '../../components/ToDo_Maker/ToDo_Maker'
 import ToDo_Viewer from '../../components/ToDo_Viewer/ToDo_Viewer'
