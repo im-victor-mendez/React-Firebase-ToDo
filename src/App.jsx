@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router'
 import './App.scss'
+import Header from './components/Header/Header'
 import { AuthProvider } from './context/authContext'
 import Home from './layouts/Home/Home'
 import Login from './layouts/Login/Login'
@@ -16,11 +17,12 @@ function App() {
   return (
     <div className="App" id='App'>
       <AuthProvider>
+        <Header theme={darkTheme} setDarkTheme={setDarkTheme} currentWidth={currentWidth} />
+
         <Routes>
-          {/* To do a protected route and improve props */}
           <Route path='/' element={
             <ProtectedRoute>
-              <Home theme={darkTheme} setDarkTheme={setDarkTheme} currentWidth={currentWidth} />
+              <Home />
             </ProtectedRoute>
           } />
           <Route path='/register' element={<Register />} />

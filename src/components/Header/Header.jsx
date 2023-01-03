@@ -1,14 +1,13 @@
 import './Header.scss'
 import React from 'react'
 
-import ICON_SUN from "../assets/images/icon-sun.svg";
-import ICON_MOON from "../assets/images/icon-moon.svg";
+import ICON_SUN from "../../assets/images/icon-sun.svg";
+import ICON_MOON from "../../assets/images/icon-moon.svg";
 
-import BD_DESKTOP_DARK from "../assets/images/bg-desktop-dark.jpg";
-import BD_DESKTOP_LIGHT from "../assets/images/bg-desktop-light.jpg";
-import BD_MOBILE_DARK from "../assets/images/bg-mobile-dark.jpg";
-import BD_MOBILE_LIGHT from "../assets/images/bg-mobile-light.jpg";
-import LogOut from './LogOut/LogOut';
+import BD_DESKTOP_DARK from "../../assets/images/bg-desktop-dark.jpg";
+import BD_DESKTOP_LIGHT from "../../assets/images/bg-desktop-light.jpg";
+import BD_MOBILE_DARK from "../../assets/images/bg-mobile-dark.jpg";
+import BD_MOBILE_LIGHT from "../../assets/images/bg-mobile-light.jpg";
 
 function Header({ theme, setDarkTheme, currentWidth }) {
     function changeTheme() {
@@ -30,8 +29,6 @@ function Header({ theme, setDarkTheme, currentWidth }) {
                 onClick={changeTheme}
                 />
             </div>
-            
-            <LogOut />
         </section>
     )
 }
