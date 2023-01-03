@@ -1,7 +1,9 @@
 import { onValue, ref } from 'firebase/database'
 import React, { useEffect, useState } from 'react'
+import { uid } from 'uid'
 import { useAuthContext } from '../../context/authContext'
 import { auth, db } from '../../firebase'
+import ToDo from '../ToDo/ToDo'
 
 function ToDo_Viewer() {
     const [todos, setTodos] = useState([])
@@ -21,7 +23,7 @@ function ToDo_Viewer() {
 
   return (
     <section id='todo_viewer'>
-        {todos && todos.map(todo => <>{ todo.todo }</>)}
+        { todos && todos.map(todo => <ToDo content={todo.todo} key={uid()} />) }
     </section>
   )
 }
