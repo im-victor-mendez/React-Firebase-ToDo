@@ -12,7 +12,7 @@ function Register() {
 
     function handleChange(event) {
         const target = event.target
-        setUserRegisterRegister({ ...userRegisterRegister, [target.name]: target.value })
+        setUserRegisterRegister({ ...userRegister, [target.name]: target.value })
     }
 
     async function onSubmit() {
