@@ -1,22 +1,23 @@
+import './Register.scss'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useAuthContext } from '../../context/authContext'
 
 function Register() {
-    const [user, setUser] = useState(null)
+    const [userRegister, setUserRegisterRegister] = useState(null)
     const [error, setError] = useState(null)
 
-    const { register } = useAuthContext()
+    const { user, register } = useAuthContext()
     const navigate = useNavigate()
 
     function handleChange(event) {
         const target = event.target
-        setUser({ ...user, [target.name]: target.value })
+        setUserRegisterRegister({ ...userRegisterRegister, [target.name]: target.value })
     }
 
     async function onSubmit() {
         try {
-            await register(user.email, user.password)
+            await register(userRegister.email, userRegister.password)
             navigate('/')
         } catch (error) {
             let errorMessage
@@ -35,7 +36,11 @@ function Register() {
 
   return (
     <section id='register'>
+        {/* To do better messages */}
         {error && <>{error.message}</>}
+        { user && <>Are you already logged!
+        <button onClick={() => navigate('/')}>Go Home :D</button>
+        </>}
         
         <form onSubmit={(event) => {
             event.preventDefault()
@@ -54,7 +59,7 @@ function Register() {
             <button type="submit">Register</button>
         </form>
 
-        <div className='user-existence'>
+        <div className='userRegister-existence'>
             <p>Do you have an account? LogIn! 😄</p>
             <button onClick={() => navigate('/login')}>LogIn</button>
         </div>

@@ -1,0 +1,30 @@
+#register {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    width: max-content;
+
+    form {
+        display: grid;
+        justify-items: center;
+        gap: 1rem;
+    }
+
+    .userRegister-existence {
+        display: grid;
+        justify-items: center;
+        gap: 0.5rem;
+    }
+
+    button {
+        background-color: transparent;
+        background-image: var(--check-background);
+
+        border: 0;
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+
+        cursor: pointer;
+    }
+}
