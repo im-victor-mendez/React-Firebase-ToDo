@@ -18,7 +18,8 @@ function ToDo_Maker() {
   function writeDataBase() {
     if(todo) try {
       const uidd = uid()
-      set(ref(db, `${auth.currentUser.uid}/${uidd}`), { todo, uidd })
+      set(ref(db, `${auth.currentUser.uid}/${uidd}`), { todo, uidd, status: false })
+      setTodo('')
     } catch (error) { setError(error.message) }
   }
 
@@ -35,7 +36,7 @@ function ToDo_Maker() {
             <img src={ICON_CROSS} alt="" />
         </button>
 
-        <input type="text" name="todo" id="todo_maker-input" placeholder='Create a new todo...' onChange={handleChange} />
+        <input type="text" name="todo" id="todo_maker-input" placeholder='Create a new todo...' onChange={handleChange} value={todo} />
     </form>
   )
 }

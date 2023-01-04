@@ -1,13 +1,22 @@
 import './ToDo.scss'
-import React from 'react'
+import React, { useState } from 'react'
 import ICON_CHECK from "../../assets/images/icon-check.svg";
 import ICON_CROSS from "../../assets/images/icon-cross.svg";
-import { ref, remove } from '@firebase/database';
+import { ref, remove, update } from '@firebase/database';
 import { db } from '../../firebase';
 import { useAuthContext } from '../../context/authContext';
 
-function ToDo({ content, uid }) {
+function ToDo({ uid, content, status }) {
+  const [finished, setFinished] = useState(status)
+  
   const { user } = useAuthContext()
+
+  function changeStatus() {
+    const newStatus = !finished
+
+    update(ref(db, `/${user.uid}/${uid}`), { status: newStatus })
+    setFinished(newStatus)
+  }
 
   async function deleteToDo() {
     try {
@@ -19,9 +28,15 @@ function ToDo({ content, uid }) {
 
   return (
     <div className='todo'>
-        {/* To implement onClick function */}
-        <button className='todo-check-button'>
-            <img src={ICON_CHECK} alt="" />
+        <button className='todo-check-button'
+        style={{
+          backgroundImage: finished ? 'var(--check-background)' : 'none'
+        }}
+        onClick={changeStatus}
+        >
+            <img src={ICON_CHECK} alt="" style={{
+              display: finished ? 'block' : 'none'
+            }} />
         </button>
 
         <p>{ content }</p>
