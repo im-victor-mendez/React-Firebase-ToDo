@@ -16,7 +16,7 @@ function ToDo_Maker() {
   }
 
   function writeDataBase() {
-    try {
+    if(todo) try {
       const uidd = uid()
       set(ref(db, `${auth.currentUser.uid}/${uidd}`), { todo, uidd })
     } catch (error) { setError(error.message) }

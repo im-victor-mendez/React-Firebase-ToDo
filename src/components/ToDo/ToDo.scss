@@ -26,6 +26,8 @@
     align-items: center;
     justify-content: center;
 
+    cursor: pointer;
+
     img {
         display: none;
     }
@@ -42,4 +44,6 @@
     background-color: transparent;
     padding: 0rem;
     border: 0px;
+
+    cursor: pointer;
 }
