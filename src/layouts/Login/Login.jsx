@@ -12,7 +12,7 @@ function Login() {
 
     function handleChange(event) {
         const target = event.target
-        setUserLogin({ ...userLoginLogin, [target.name]: target.value })
+        setUserLogin({ ...userLogin, [target.name]: target.value })
     }
 
     async function onSubmit() {
