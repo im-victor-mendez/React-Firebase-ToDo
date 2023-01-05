@@ -1,17 +1,15 @@
-@media (prefers-color-scheme: dark) {
-    .App {
-        background-color: var(--very-dark-blue);
-    }
+.Dark {
+    background-color: var(--very-dark-blue);
+}
 
-    @media (max-width: 720px) {
-        .App {
-            background-image: url('../assets/images/bg-mobile-dark.jpg');
-        }
+@media (max-width: 720px) {
+    .Dark {
+        background-image: url('/src/assets/images/bg-mobile-dark.jpg');
     }
-    
-    @media (min-width: 720px) {
-        .App {
-            background-image: url('../assets/images/bg-desktop-dark.jpg');
-        }
+}
+
+@media (min-width: 720px) {
+    .Dark {
+        background-image: url('/src/assets/images/bg-desktop-dark.jpg');
     }
 }
