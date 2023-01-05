@@ -1,5 +1,5 @@
 import './ToDo_Viewer.scss'
-import { onValue, ref } from 'firebase/database'
+import { onValue, ref, remove } from 'firebase/database'
 import React, { useEffect, useState } from 'react'
 import { uid } from 'uid'
 import { useAuthContext } from '../../context/authContext'
@@ -21,6 +21,11 @@ function ToDo_Viewer() {
 
         const data = snapshot.val()
         if (data) Object.values(data).map(todo => setTodos(oldArray => [...oldArray, todo]))
+    }
+
+    async function clearCompleted() {
+      const completedTodos = todos.filter(todo => todo.status === true)
+      await completedTodos.forEach(todo => remove(ref(db, `${user.uid}/${todo.uidd}`)) );
     }
 
   return (
@@ -47,7 +52,7 @@ function ToDo_Viewer() {
             </label>
           </form>
 
-          <button className='clear'>Clear Completed</button>
+          <button className='clear' onClick={clearCompleted}>Clear Completed</button>
         </div>
     </section>
   )
