@@ -1,15 +1,38 @@
 .Light {
-    background-color: var(--very-light-gray);
+  background-color: white;
+  color: var(--very-dark-grayish-blue);
+
+  #todo_maker,
+  #todo_viewer {
+      background-color: var(--very-light-gray);
   }
-  
-  @media (max-width: 720px) {
-    .Light {
-        background-image: url('/src/assets/images/bg-mobile-light.jpg');
+
+  #todo_maker-button {
+    border: 1px solid var(--light-grayish-blue);
+  }
+
+  #todo_viewer-filter,
+  .clear {
+    color: var(--dark-grayish-blue);
+  }
+
+  .todo {
+    border-bottom: 1px solid var(--light-grayish-blue);
+
+    .todo-check-button {
+      border: 1px solid var(--light-grayish-blue);
     }
   }
+}
   
-  @media (min-width: 720px) {
-    .Light {
-        background-image: url('/src/assets/images/bg-desktop-light.jpg');
-    }
+@media (max-width: 720px) {
+  .Light {
+      background-image: url('/src/assets/images/bg-mobile-light.jpg');
   }
+}
+  
+@media (min-width: 720px) {
+  .Light {
+      background-image: url('/src/assets/images/bg-desktop-light.jpg');
+  }
+}

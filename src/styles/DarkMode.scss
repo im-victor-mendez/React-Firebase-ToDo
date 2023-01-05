@@ -1,5 +1,30 @@
 .Dark {
     background-color: var(--very-dark-blue);
+    color: var(--dark-grayish-blue);
+
+    #todo_maker,
+    #todo_viewer {
+        background-color: var(--very-dark-desaturated-blue);
+    }
+
+    #todo_maker-button {
+        border: 1px solid var(--very-dark-grayish-blue);
+    }
+
+    #todo_viewer {
+        #todo_viewer-filter,
+        .clear {
+            color: var(--very-dark-grayish-blue);
+        }
+    }
+
+    .todo {
+        border-bottom: 1px solid var(--very-dark-grayish-blue);
+
+        .todo-check-button {
+            border: 1px solid var(--very-dark-grayish-blue);
+        }
+    }
 }
 
 @media (max-width: 720px) {
