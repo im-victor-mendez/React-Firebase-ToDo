@@ -13,17 +13,27 @@ function UseTheme() {
     const [theme, setTheme] = useState(null)
 
     const currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const currentWidth = window.matchMedia('(min-width: 720px)').matches
+    let appElement = document.getElementById('App')
 
     useEffect(() => {
-      if (currentTheme) setTheme(true); else setTheme(false);
+        appElement = document.getElementById('App')
+        if (currentTheme) {
+            setTheme(true)
+
+            appElement.classList.add('Dark')
+        } else {
+            setTheme(false)
+
+            appElement.classList.add('Light')
+        }
     }, [])
     
 
     function changeTheme() {
-        const appElement = document.getElementById('App')
-
-        appElement.style.backgroundColor = (`var(${!theme ? '--very-dark-blue' : '--very-light-gray'})`)
+        appElement = document.getElementById('App')
+        appElement.classList.toggle('Dark')
+        appElement.classList.toggle('Light')
+        
         appElement.style.backgroundImage = (`url(${!theme ?
             (currentWidth ? BG_DESKTOP_DARK : BG_MOBILE_DARK) :
             (currentWidth ? BG_DESKTOP_LIGHT : BG_MOBILE_LIGHT)})`)
