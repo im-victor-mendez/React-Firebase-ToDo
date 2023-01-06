@@ -1,12 +1,10 @@
 #header {
     color: var(--very-light-gray);
-    position: absolute;
-    top: 0;
-    width: 100%;
 
     #header-top {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
 
         h1 {
             letter-spacing: 1rem;
